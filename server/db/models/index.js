@@ -1,5 +1,6 @@
 const User = require('./user')
 const {Movie} = require('./movie')
+const Rating = require('./rating')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -7,6 +8,9 @@ const {Movie} = require('./movie')
  *
  *    BlogPost.belongsTo(User)
  */
+
+Rating.belongsTo(User)
+Rating.belongsTo(Movie)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -16,5 +20,6 @@ const {Movie} = require('./movie')
  */
 module.exports = {
   User,
-  Movie
+  Movie,
+  Rating
 }

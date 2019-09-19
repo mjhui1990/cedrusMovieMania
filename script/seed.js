@@ -1,7 +1,7 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Movie} = require('../server/db/models')
 
 async function seed() {
   await db.sync({force: true})
@@ -10,6 +10,23 @@ async function seed() {
   const users = await Promise.all([
     User.create({email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'})
+  ])
+
+  const movies = await Promise.all([
+    Movie.create({
+      name: 'Tropic Thunder',
+      description: 'Movie about making a movie',
+      genre: 'Comedy',
+      posterURL:
+        'https://m.media-amazon.com/images/M/MV5BNDE5NjQzMDkzOF5BMl5BanBnXkFtZTcwODI3ODI3MQ@@._V1_SY1000_CR0,0,711,1000_AL_.jpg'
+    }),
+    Movie.create({
+      name: 'Test Movie 2',
+      description: 'The test movie',
+      genre: 'Horror',
+      posterURL:
+        'https://images-na.ssl-images-amazon.com/images/I/91zh7rLwI3L._SL1500_.jpg'
+    })
   ])
 
   console.log(`seeded ${users.length} users`)

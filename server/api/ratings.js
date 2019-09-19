@@ -2,11 +2,11 @@ const router = require('express').Router()
 const Rating = require('../db/models')
 
 router.post('/', async (req, res, next) => {
-  const userID = req.user.id
+  const userID = 1
   const {rating, movieId} = req.body
   let createdRating
 
-  const foundRating = await Rating.find({
+  const foundRating = await Rating.findOne({
     where: {userId: userID, movieId: movieId}
   })
   if (!foundRating) {

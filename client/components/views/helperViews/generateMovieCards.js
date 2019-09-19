@@ -15,7 +15,7 @@ const generateMovieCards = movies => {
         <CardMedia
           style={{height: 0, paddingTop: '56%'}}
           image={movie.posterURL}
-          title="Paella dish"
+          title={movie.name}
         />
         <CardContent>
           <Typography>Genre: {movie.genre}</Typography>

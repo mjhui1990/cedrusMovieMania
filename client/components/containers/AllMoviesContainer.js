@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import AllMoviesView from '../views/AllMoviesView'
 import axios from 'axios'
 
 class AllMoviesContainer extends Component {
@@ -15,10 +16,9 @@ class AllMoviesContainer extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div>
-        <p>test</p>
+        <AllMoviesView allMovies={this.state.allMovies} />
       </div>
     )
   }

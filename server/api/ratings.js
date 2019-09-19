@@ -16,5 +16,8 @@ router.post('/', async (req, res, next) => {
       userId: userID
     })
   }
+  //if you found the moving you can edit the rating
   res.send(200)
 })
+
+module.exports = router

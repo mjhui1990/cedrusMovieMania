@@ -10,7 +10,7 @@ const Movie = db.define('movie', {
   description: {
     type: Sequelize.STRING
   },
-  Genre: {
+  genre: {
     type: Sequelize.STRING,
     allowNull: false
   },

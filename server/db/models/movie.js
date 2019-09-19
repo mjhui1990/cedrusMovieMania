@@ -2,7 +2,7 @@ const db = require('../db')
 
 const Sequelize = require('sequelize')
 
-const Movie = db.define('movie', {
+var Movie = db.define('movie', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
@@ -19,4 +19,12 @@ const Movie = db.define('movie', {
   }
 })
 
-module.exports = Movie
+const getAllMovies = async () => {
+  const allMovies = await Movie.findAll()
+  return allMovies
+}
+
+module.exports = {
+  Movie,
+  getAllMovies
+}
